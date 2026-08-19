@@ -4,6 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ECK온라인강좌 가이드</title>
+
+  <style>
+/* ========================================
+   iframe 삽입용 위치 조정
+======================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* 챗봇 전체 */
+#eckv3 {
+    width: 100%;
+    height: 100%;
+}
+
+/* 챗봇 실행 아이콘 */
+#eckv3 .launcher {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+}
+
+/* 채팅창 */
+#eckv3 .chat {
+    position: fixed;
+    right: 18px;
+    bottom: 94px;
+}
+
+/* 모바일 */
+@media (max-width: 640px) {
+
+    #eckv3 .launcher {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    #eckv3 .chat {
+        left: 8px;
+        right: 8px;
+        bottom: 78px;
+        width: auto;
+    }
+}
+</style>
+
+
+<style>
+#eckv3,
+#eckv3 *,
+#eckv3 *::before,
+#eckv3 *::after {
+    box-sizing: border-box;
+}
+</style>
+  
 <style>
 #eckv3, #eckv3 *, #eckv3 *::before, #eckv3 *::after { box-sizing: border-box; }
 </style>
