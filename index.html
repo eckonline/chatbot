@@ -297,7 +297,7 @@
       d.innerHTML=(p.thumb ? `<img class="thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="pill pkgPill">📦 ${p.category}</div><div class="ttl">${p.title}</div><div class="metaRow"><div class="metaChip">${formatPrice(p.price)}</div></div><div class="desc">${p.desc}</div>` + (p.note ? `<div class="desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="btns"><button class="btn primary small pkgLinkBtn">패키지 자세히 보기</button></div>`;
       (container || body).appendChild(d);
       const btn = d.querySelector('.pkgLinkBtn');
-      if(btn) btn.onclick = () => window.open(p.url || packageUrl, '_blank');
+      if(btn) btn.onclick = () => { const a=document.createElement('a'); a.href=p.url || packageUrl; a.target='_blank'; a.rel='noopener noreferrer'; document.body.appendChild(a); a.click(); a.remove(); };
       scrollToLatest();
     }
     function showPackages(lang) {
@@ -504,7 +504,7 @@
       d.innerHTML=`${thumb ? `<img class="thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="pill">${kind}</div><div class="ttl">${title}</div><div class="metaRow"><div class="metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="metaChip">${formatPrice(meta.price)}</div></div><div class="desc"><b>포커스</b> · ${focus}</div><div class="desc"><b>추천 이유</b> · ${reason}</div><div class="btns"><button class="btn enroll small enrollBtn">🎓 수강신청하기</button></div>`;
       (container || body).appendChild(d);
       const btn = d.querySelector('.enrollBtn');
-      if(btn) btn.onclick = () => window.open(courseUrl(title), '_blank');
+      if(btn) btn.onclick = () => { const a=document.createElement('a'); a.href=courseUrl(title); a.target='_blank'; a.rel='noopener noreferrer'; document.body.appendChild(a); a.click(); a.remove(); };
       scrollToLatest();
     }
     function clearPicked() { state.picked = {purpose:false, exam:false, target:false}; }
