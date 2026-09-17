@@ -955,7 +955,7 @@ html body #eckv3-widget .eckv3-searchBtn {
     }
     function pkgCard(p, container) {
       const d=document.createElement('div'); d.className='eckv3-rec eckv3-pkgCard';
-      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><form class="eckv3-linkForm" action="${p.url || packageUrl}" method="post" target="_blank"><button type="submit" class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn">패키지 자세히 보기</button></form></div>`;
+      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><a class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn" href="${p.url || packageUrl}" target="_blank" rel="noopener noreferrer">패키지 자세히 보기</a></div>`;
       (container || body).appendChild(d);
       scrollToLatest();
     }
@@ -1196,7 +1196,7 @@ html body #eckv3-widget .eckv3-searchBtn {
       const shownFocus = displayFocus(title, focus);
       const thumb = courseThumbs[title];
       const d=document.createElement('div'); d.className='eckv3-rec';
-      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><form class="eckv3-linkForm" action="${courseUrl(title)}" method="post" target="_blank"><button type="submit" class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn">🎓 수강신청하기</button></form></div>`;
+      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><a class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn" href="${courseUrl(title)}" target="_blank" rel="noopener noreferrer">🎓 수강신청하기</a></div>`;
       (container || body).appendChild(d);
       scrollToLatest();
     }
@@ -2180,6 +2180,63 @@ html body #eckv3-widget .eckv3-searchBtn {
     font: inherit;
     cursor: pointer;
   }
+</style>
+
+
+
+<style id="eck-fullchat-page">
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+#eckv3-widget {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* 독립 실행 시 필요 없는 요소 숨김 */
+#eckv3-widget .eckv3-launcher,
+#eckv3-widget .eckv3-launcherTip,
+#eckv3-widget #eckv3-close {
+  display: none !important;
+}
+
+/* 채팅방 자체가 브라우저 화면 전체를 차지 */
+html body #eckv3-widget .eckv3-chat,
+html body #eckv3-widget .eckv3-chat.eckv3-hidden {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  transform: none !important;
+
+  display: flex !important;
+  overflow: hidden !important;
+
+  box-shadow: none !important;
+}
 </style>
 
 </body>
