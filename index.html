@@ -2170,5 +2170,27 @@ html body #eckv3-widget .eckv3-searchBtn {
   }
 </style>
 
+
+<script id="eck-external-link-bridge">
+(function () {
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a.eckv3-enrollBtn, a.eckv3-pkgLinkBtn');
+    if (!link) return;
+
+    const url = link.href;
+    if (!url) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    // 루소프트 쪽 부모 문서에 외부 링크 열기 요청
+    window.parent.postMessage({
+      type: 'ECK_OPEN_EXTERNAL',
+      url: url
+    }, '*');
+  }, true);
+})();
+</script>
+
 </body>
 </html>
