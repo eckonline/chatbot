@@ -955,10 +955,8 @@ html body #eckv3-widget .eckv3-searchBtn {
     }
     function pkgCard(p, container) {
       const d=document.createElement('div'); d.className='eckv3-rec eckv3-pkgCard';
-      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><button class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn">패키지 자세히 보기</button></div>`;
+      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><a class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn" href="${p.url || packageUrl}" target="_blank" rel="noopener noreferrer">패키지 자세히 보기</a></div>`;
       (container || body).appendChild(d);
-      const btn = d.querySelector('.eckv3-pkgLinkBtn');
-      if(btn) btn.onclick = () => window.open(p.url || packageUrl, '_blank');
       scrollToLatest();
     }
     function showPackages(lang) {
@@ -1198,10 +1196,8 @@ html body #eckv3-widget .eckv3-searchBtn {
       const shownFocus = displayFocus(title, focus);
       const thumb = courseThumbs[title];
       const d=document.createElement('div'); d.className='eckv3-rec';
-      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><button class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn">🎓 수강신청하기</button></div>`;
+      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><a class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn" href="${courseUrl(title)}" target="_blank" rel="noopener noreferrer">🎓 수강신청하기</a></div>`;
       (container || body).appendChild(d);
-      const btn = d.querySelector('.eckv3-enrollBtn');
-      if(btn) btn.onclick = () => window.open(courseUrl(title), '_blank');
       scrollToLatest();
     }
     function clearPicked() { state.picked = {purpose:false, exam:false, target:false}; }
@@ -2162,6 +2158,15 @@ html body #eckv3-widget .eckv3-searchBtn {
       height: 100% !important;
       border-radius: 18px !important;
     }
+  }
+</style>
+
+
+<style id="eck-link-button-fix">
+  #eckv3-widget a.eckv3-btn,
+  #eckv3-widget a.eckv3-btn:link,
+  #eckv3-widget a.eckv3-btn:visited {
+    text-decoration: none !important;
   }
 </style>
 
