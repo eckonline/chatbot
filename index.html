@@ -9,13 +9,9 @@
   <style>
     html, body {
       width: 100%;
-      height: 100%;
       min-height: 100%;
       margin: 0;
       padding: 0;
-      background: transparent !important;
-      background-color: transparent !important;
-      overflow: hidden;
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
     }
@@ -875,7 +871,7 @@ html body #eckv3-widget .eckv3-searchBtn {
       <span class="eckv3-launcherTipText">강좌 추천이<br>필요하신가요?</span>
       <span class="eckv3-launcherTipClose" id="eckv3-launcherTipClose" role="button" tabindex="0" aria-label="말풍선 닫기">✕</span>
     </div>
-    <div class="eckv3-chat" id="eckv3-chat">
+    <div class="eckv3-chat eckv3-hidden" id="eckv3-chat">
       <div class="eckv3-head">
         <div class="eckv3-brand"><div class="eckv3-logo"><img src="data:image/jpeg;base64,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" alt="ECK온라인강좌 가이드"></div><div class="eckv3-brandText"><div class="eckv3-brandTitle">ECK온라인강좌 가이드</div><div class="eckv3-brandSub">나에게 맞는 외국어 강좌 찾기</div></div></div>
         <div class="eckv3-tools"><div class="eckv3-tool" id="eckv3-reset" role="button" tabindex="0" aria-label="처음부터 다시 시작">↻</div><div class="eckv3-tool" id="eckv3-close" role="button" tabindex="0" aria-label="ECK온라인강좌 가이드 챗봇 닫기">✕</div></div>
@@ -955,8 +951,10 @@ html body #eckv3-widget .eckv3-searchBtn {
     }
     function pkgCard(p, container) {
       const d=document.createElement('div'); d.className='eckv3-rec eckv3-pkgCard';
-      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><a class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn" href="${p.url || packageUrl}" target="_blank" rel="noopener noreferrer">패키지 자세히 보기</a></div>`;
+      d.innerHTML=(p.thumb ? `<img class="eckv3-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">` : '') + `<div class="eckv3-pill eckv3-pkgPill">📦 ${p.category}</div><div class="eckv3-ttl">${p.title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">${formatPrice(p.price)}</div></div><div class="eckv3-desc">${p.desc}</div>` + (p.note ? `<div class="eckv3-desc"><b>안내</b> · ${p.note}</div>` : '') + `<div class="eckv3-btns"><button class="eckv3-btn eckv3-primary eckv3-small eckv3-pkgLinkBtn">패키지 자세히 보기</button></div>`;
       (container || body).appendChild(d);
+      const btn = d.querySelector('.eckv3-pkgLinkBtn');
+      if(btn) btn.onclick = () => window.open(p.url || packageUrl, '_blank');
       scrollToLatest();
     }
     function showPackages(lang) {
@@ -975,7 +973,7 @@ html body #eckv3-widget .eckv3-searchBtn {
     // 수준 질문 없이 카드를 바로 보여주는 분류 (쉬운 단계부터 정렬해서 노출)
     const DIRECT_PURPOSES = ['입문·기초', '중고급'];
     const regionOrder = ['유럽어','중동·서남아시아어','아시아어','기타어'];
-    const state = {picked:{purpose:false,exam:false,target:false}, fPicked:{target:false,purpose:false,level:false}, kPicked:{purpose:false,level:false}, open:true, step:'lang', lang:null, purpose:null, exam:null, target:null, region:null, cultureCountry:null, fBase:null, fTarget:null, fPurpose:null, fLevel:null, kBase:null, kPurpose:null, kLevel:null};
+    const state = {picked:{purpose:false,exam:false,target:false}, fPicked:{target:false,purpose:false,level:false}, kPicked:{purpose:false,level:false}, open:false, step:'lang', lang:null, purpose:null, exam:null, target:null, region:null, cultureCountry:null, fBase:null, fTarget:null, fPurpose:null, fLevel:null, kBase:null, kPurpose:null, kLevel:null};
     const body = eckv3ById('eckv3-body');
     const chat = eckv3ById('eckv3-chat');
     const tipEl = eckv3Root.querySelector('.eckv3-tip');
@@ -1196,8 +1194,10 @@ html body #eckv3-widget .eckv3-searchBtn {
       const shownFocus = displayFocus(title, focus);
       const thumb = courseThumbs[title];
       const d=document.createElement('div'); d.className='eckv3-rec';
-      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><a class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn" href="${courseUrl(title)}" target="_blank" rel="noopener noreferrer">🎓 수강신청하기</a></div>`;
+      d.innerHTML=`${thumb ? `<img class="eckv3-thumb" src="${thumb}" alt="${title}" loading="lazy">` : ''}<div class="eckv3-pill">${kind}</div><div class="eckv3-ttl">${title}</div><div class="eckv3-metaRow"><div class="eckv3-metaChip">난이도 ${difficultyBar(meta.level, title)}</div><div class="eckv3-metaChip">${formatPrice(meta.price)}</div></div><div class="eckv3-desc"><b>포커스</b> · ${shownFocus}</div><div class="eckv3-desc"><b>추천 이유</b> · ${reason}</div><div class="eckv3-btns"><button class="eckv3-btn eckv3-enroll eckv3-small eckv3-enrollBtn">🎓 수강신청하기</button></div>`;
       (container || body).appendChild(d);
+      const btn = d.querySelector('.eckv3-enrollBtn');
+      if(btn) btn.onclick = () => window.open(courseUrl(title), '_blank');
       scrollToLatest();
     }
     function clearPicked() { state.picked = {purpose:false, exam:false, target:false}; }
@@ -2084,160 +2084,6 @@ html body #eckv3-widget .eckv3-searchBtn {
   </script>
 </div>
 
-
-
-<style id="eck-chatbot-iframe-final">
-  /* GitHub Pages iframe 전용 */
-  html,
-  body {
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    background: transparent !important;
-    background-color: transparent !important;
-  }
-
-  #eckv3-widget {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    background: transparent !important;
-  }
-
-  #eckv3-widget .eckv3-shell {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  /* 홈페이지 쪽에 별도 아이콘이 있으므로 내부 런처/말풍선은 숨김 */
-  #eckv3-widget .eckv3-launcher,
-  #eckv3-widget .eckv3-launcherTip {
-    display: none !important;
-  }
-
-  /* 닫기는 루소프트 바깥쪽 X 버튼이 담당 */
-  #eckv3-widget #eckv3-close {
-    display: none !important;
-  }
-
-  /* iframe 자체가 작은 팝업 크기이므로 그 안에서만 꽉 채움 */
-  html body #eckv3-widget .eckv3-chat {
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    min-height: 0 !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-
-    border-radius: 22px !important;
-    overflow: hidden !important;
-  }
-
-  /* 혹시 기존 hidden 클래스가 다시 붙어도 iframe용 페이지에서는 표시 유지 */
-  #eckv3-widget .eckv3-chat.eckv3-hidden {
-    display: flex !important;
-  }
-
-  @media (max-width: 640px) {
-    html body #eckv3-widget .eckv3-chat {
-      top: 0 !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 18px !important;
-    }
-  }
-</style>
-
-
-<style id="eck-link-button-fix">
-  #eckv3-widget a.eckv3-btn,
-  #eckv3-widget a.eckv3-btn:link,
-  #eckv3-widget a.eckv3-btn:visited {
-    text-decoration: none !important;
-  }
-</style>
-
-<style id="eck-form-link-fix">
-  #eckv3-widget .eckv3-linkForm {
-    margin: 0;
-    padding: 0;
-    display: inline;
-  }
-  #eckv3-widget .eckv3-linkForm button {
-    font: inherit;
-    cursor: pointer;
-  }
-</style>
-
-
-
-<style id="eck-fullchat-page">
-html, body {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  background: transparent !important;
-}
-
-#eckv3-widget {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-}
-
-/* 독립 실행 시 필요 없는 요소 숨김 */
-#eckv3-widget .eckv3-launcher,
-#eckv3-widget .eckv3-launcherTip,
-#eckv3-widget #eckv3-close {
-  display: none !important;
-}
-
-/* 채팅방 자체가 브라우저 화면 전체를 차지 */
-html body #eckv3-widget .eckv3-chat,
-html body #eckv3-widget .eckv3-chat.eckv3-hidden {
-  position: fixed !important;
-  inset: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  min-width: 0 !important;
-  max-width: none !important;
-  min-height: 0 !important;
-  max-height: none !important;
-
-  margin: 0 !important;
-
-  border: 0 !important;
-  border-radius: 0 !important;
-
-  transform: none !important;
-
-  display: flex !important;
-  overflow: hidden !important;
-
-  box-shadow: none !important;
-}
-</style>
 
 </body>
 </html>
